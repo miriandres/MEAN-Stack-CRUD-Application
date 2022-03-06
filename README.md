@@ -18,9 +18,6 @@ Se creará una interfaz con Angular para realizar peticiones y una API desarroll
 * [Github](https://github.com/miriandres)
 * [LinkedIn](www.linkedin.com/in/miriamandresdev)
 
-## Live Site Url
-Puedes ver el proyecto en directo aquí [https://miriandres.github.io/MEAN-Stack-CRUD-Application/](https://miriandres.github.io/MEAN-Stack-CRUD-Application/)
-
 ## Instalación
 ### Requisitos previos
 * Descargar e instalar [NodeJS](https://nodejs.org/en/download/)
