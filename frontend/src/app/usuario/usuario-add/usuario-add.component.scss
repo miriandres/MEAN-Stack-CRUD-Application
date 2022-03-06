@@ -1,0 +1,45 @@
+.wrapper {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    @media screen and (max-width: 768px) {
+        align-items: center;
+        flex-direction: column;
+    }
+}
+.crear {
+    @media screen and (max-width: 768px) {
+        order: 2;
+    }
+}
+.card {
+    width: 420px;
+    padding: 0;
+
+    &__title {
+        padding: .3 em 0;
+        background-color: #3f51b5;
+        color: white;
+    }
+    &__content {
+        padding: 1.5em;
+    }
+    &__field {
+        display: flex;
+        flex-direction: column;
+    }
+    &__radio {
+        margin: .1em 0;
+    }
+    &__botonera {
+        margin-top: 1.5em;
+    }
+    &__btn {
+        margin: 0 .4em;
+    }
+}

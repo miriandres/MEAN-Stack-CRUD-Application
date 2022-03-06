@@ -1,0 +1,88 @@
+<mat-toolbar color="primary">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="lista__icon"
+        viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+        <path fill-rule="evenodd"
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+    </svg>
+    <span>Miriandres - Sample CRUD App</span>
+</mat-toolbar>
+
+<div class="wrapper">
+    <div class="lista mat-elevation-z2">
+        <div class="lista__header">
+            <h2>Lista de usuarios</h2>
+            <mat-form-field appearance="standard">
+                <mat-label>Encuentre un usuario</mat-label>
+                <mat-icon matSuffix>search</mat-icon>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Introduzca sus datos" #input>
+            </mat-form-field>
+            <button mat-raised-button color="primary" [routerLink]='"/form"'>
+                <mat-icon>person_add</mat-icon>
+            </button>
+        </div>
+        
+        <table mat-table [dataSource]="dataSource" matSort class="tabla" [hidden]="usuarios.length == 0 ">
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> No.</th>
+                <td mat-cell *matCellDef="let usuarios, let i = index"> <strong>{{(i + 1) + (paginator.pageIndex * paginator.pageSize )}}</strong> </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                <td mat-cell *matCellDef="let usuarios"> {{usuarios.nombre | titlecase}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="apellidos">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </th>
+                <td mat-cell *matCellDef="let usuarios"> {{usuarios.apellidos | titlecase}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="edad">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Edad </th>
+                <td mat-cell *matCellDef="let usuarios"> {{usuarios.edad}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="dni">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> DNI </th>
+                <td mat-cell *matCellDef="let usuarios"> {{usuarios.dni}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="cumple">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Cumple </th>
+                <td mat-cell *matCellDef="let usuarios"> {{usuarios.cumple | date : "dd-MM-yyyy"}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="colorFav">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Color favorito </th>
+                <td mat-cell *matCellDef="let usuarios"> {{usuarios.colorFav | titlecase}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="sexo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Sexo </th>
+                <td mat-cell *matCellDef="let usuarios"> {{usuarios.sexo | titlecase}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let usuarios" class="tabla__right">
+                    <button class="tabla__btn" mat-mini-fab color="primary" (click)="editarUser(usuarios._id)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="tabla__btn" mat-mini-fab color="accent" (click)="borrarUser(usuarios._id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+            
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+        </table>
+        <mat-paginator [length]="100"
+                       [pageSize]="10"
+                       [pageSizeOptions]="[5, 10, 25, 100]"
+                       showFirstLastButtons
+                       aria-label="Select page">
+        </mat-paginator>
+    </div>
+</div>

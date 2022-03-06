@@ -1,0 +1,42 @@
+.wrapper {
+    width: 92%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5em 2.5em;
+}
+.lista {
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5em 1.8em;
+        background: rgba(250, 250, 250, 0.7);
+    }
+    &__icon{
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0 .8em 0 0;
+    }
+}
+.tabla {
+    width: 100%;
+    
+    th {
+        width: calc(100% / 9);
+    }
+    &__right {
+        text-align: right;
+
+        @media screen and (max-width: 1127px){
+            padding: 0;
+            text-align: center;
+        }
+    }
+    &__btn {
+        margin: 0 .2em;
+    }
+}
+mat-form-field {
+    width: 40%;
+    opacity: 0.5;
+}

@@ -1,0 +1,70 @@
+<div class="wrapper">
+    <section class="crear">
+        <mat-card class="card">
+            <mat-toolbar class="card__title">
+                <h2>Crear usuario</h2>
+            </mat-toolbar>
+    
+            <mat-card-content class="card__content">
+                <form (ngSubmit)="crearUser(anadirForm); anadirForm.resetForm()" class="form" #anadirForm="ngForm">
+                        
+                    <mat-form-field class="card__field">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput type="text" [(ngModel)]="usuario.nombre" #nombre="ngModel" name="nombre" minlength="3" required>
+                        <mat-error *ngIf="nombre.touched && !nombre.valid">Debe tener al menos 3 caracteres</mat-error>
+                    </mat-form-field>
+        
+                    <mat-form-field class="card__field">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput type="text" [(ngModel)]="usuario.apellidos" #apellidos="ngModel" name="apellidos" minlength="3" required>
+                        <mat-error *ngIf="apellidos.touched && !apellidos.valid">Debe tener al menos 3 caracteres</mat-error>
+                    </mat-form-field>
+        
+                    <mat-form-field class="card__field">
+                        <mat-label>Edad</mat-label>
+                        <input matInput type="text" [(ngModel)]="usuario.edad" #edad="ngModel" name="edad" required>
+                    </mat-form-field>
+        
+                    <mat-form-field class="card__field">
+                        <mat-label>DNI</mat-label>
+                        <input matInput #dni type="text" [(ngModel)]="usuario.dni" name="dni" pattern="[0-9]{8}[A-Za-z]{1}" maxlength="9" required>
+                        <mat-hint align="end">{{dni.value.length}}/9</mat-hint>
+                        <mat-error *ngIf="dni.touched && !dni.valid"></mat-error>
+                    </mat-form-field>
+        
+                    <mat-form-field class="card__field" appearance="fill">
+                        <mat-label>Fecha de nacimiento</mat-label>
+                        <input [min]="minDate" matInput type="text" [matDatepicker]="picker" [(ngModel)]="usuario.cumple" #cumple="ngModel" name="cumple">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+        
+                    <mat-form-field class="card__field">
+                        <mat-label>Color favorito</mat-label>
+                        <input matInput type="text" [(ngModel)]="usuario.colorFav" #colorFav="ngModel" name="colorFav" minlength="3" required>
+                        <mat-error *ngIf="colorFav.touched && !colorFav.valid">Debe tener al menos 3 caracteres</mat-error>
+                    </mat-form-field>
+        
+                    <mat-radio-group class="card__field" aria-label="Seleccione su sexo" [(ngModel)]="usuario.sexo" name="sexo" required>
+                        <mat-radio-button class="card__radio" value="hombre">Hombre</mat-radio-button>
+                        <mat-radio-button class="card__radio" value="mujer">Mujer</mat-radio-button>
+                        <mat-radio-button class="card__radio" value="otro">Otro</mat-radio-button>
+                        <mat-radio-button class="card__radio" value="no-especificado">No especificado</mat-radio-button>
+                    </mat-radio-group>
+
+                    <div class="card__botonera">
+                        <button class="card__btn" mat-raised-button color="basic" type="button" (click)="volver()">Volver</button>
+                        <button class="card__submit" mat-raised-button color="primary" type="submit" [disabled]="anadirForm.invalid">Crear</button>
+                    </div>
+                
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </section>
+
+    <section>
+        <h2>Mostrando el usuario a añadir</h2>
+        <h3>{{ usuario.nombre }}</h3>
+        <h3>{{ usuario.apellidos }}</h3>
+    </section>
+</div>
