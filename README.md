@@ -1,3 +1,5 @@
+![Demo](demo.gif)
+
 # MEAN Stack CRUD Application
 Proyecto final del Curso de Desarrollo Full-Stack de Samsung DesArrolladoras, impartido por Bejob y con certificación académica de la Fundación General de la Universidad de Alcalá (FGUA).
 
