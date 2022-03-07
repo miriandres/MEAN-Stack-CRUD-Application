@@ -40,6 +40,7 @@ $ ng serve
 ### Iniciar el servidor
 ```
 $ cd server
+$ npm install
 $ npm run dev 
 ```
 
