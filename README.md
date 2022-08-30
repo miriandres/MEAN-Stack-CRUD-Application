@@ -71,7 +71,7 @@ $ npm run dev
 - [x] Actualizar a versión Angular 13
 
 ## Contratación
-Si quieres contratarme puedes escribirme a miriandres.dev@gmail.com para consultas.
+Si quieres contratarme puedes escribirme a hello@miriamandres.com para consultas.
 
 ## Licencia 📄
 MIT Public License v3.0
