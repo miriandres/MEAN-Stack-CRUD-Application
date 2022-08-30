@@ -17,6 +17,7 @@ Se creará una interfaz con Angular para realizar peticiones y una API desarroll
 
 ## Autor ✒️
 **Miriam Andrés** - *Documentación y trabajo inicial*
+* [Website](https://miriamandres.com)
 * [Github](https://github.com/miriandres)
 * [LinkedIn](www.linkedin.com/in/miriamandresdev)
 
