@@ -16,10 +16,10 @@ Se creará una interfaz con Angular para realizar peticiones y una API desarroll
 * El funcionamiento de la API se puede comprobar con la aplicación `Postman`, al igual que se describió en la nota técnica.
 
 ## Autor ✒️
-**Miriam Andrés** - *Documentación y trabajo inicial*
+**Miriam Andrés** - *Documentación y Código*
 * [Website](https://miriamandres.com)
 * [Github](https://github.com/miriandres)
-* [LinkedIn](www.linkedin.com/in/miriamandresdev)
+* [LinkedIn](www.linkedin.com/in/miriandres)
 
 ## Instalación
 ### Requisitos previos
