@@ -32,7 +32,7 @@ export class UsuarioAddComponent implements OnInit {
         _that.usuarios = data 
       })
     })
-    this.location.back()
+    this.volver()
   }
 
   volver(): void {
